@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
+
+:root {
+    --sbitem-text-contrast: #FF4A44;
+    --sbitem-text-contrast-dark: #E8E67D;
+    --sbitem-bg-rd: #FFEEEB;
+    --sbitem-bg-rd-dark: #572A25;
+    --sbitem-bg-rd-shadow: 1px 1px 2px #A95E55;
+    --sbitem-bg-rd-shadow-dark: 1px 1px 2px #9E5B53;
+    --sbitem-bg-or: #FFF0DD;
+    --sbitem-bg-or-dark: #553D25;
+    --sbitem-bg-or-shadow: 1px 1px 2px #816242;
+    --sbitem-bg-or-shadow-dark: 1px 1px 2px #816242;
+    --sbitem-bg-yw: #FCF9DC;
+    --sbitem-bg-yw-dark: #443E1E;
+    --sbitem-bg-yw-shadow: 1px 1px 2px #8C814F;
+    --sbitem-bg-yw-shadow-dark: 1px 1px 2px #8C814F;
+    --sbitem-bg-gr: #EBF2EC;
+    --sbitem-bg-gr-dark: #253F27;
+    --sbitem-bg-gr-shadow: 1px 1px 2px #537A55;
+    --sbitem-bg-gr-shadow-dark: 1px 1px 2px #537A55;
+    --sbitem-bg-bl: #E4F3FD;
+    --sbitem-bg-bl-dark: #183D4D;
+    --sbitem-bg-bl-shadow: 1px 1px 2px #3A7692;
+    --sbitem-bg-bl-shadow-dark: 1px 1px 2px #3A7692;
+    --sbitem-bg-vt: #F5E9FF;
+    --sbitem-bg-vt-dark: #4A2B44;
+    --sbitem-bg-vt-shadow: 1px 1px 2px #8E5B84;
+    --sbitem-bg-vt-shadow-dark: 1px 1px 2px #8E5B84;
+}
+
+@mixin SidebarEnhancer(
+    $sbitem-text-contrast,
+    $sbitem-bg-rd,
+    $sbitem-bg-rd-shadow,
+    $sbitem-bg-or,
+    $sbitem-bg-or-shadow,
+    $sbitem-bg-yw,
+    $sbitem-bg-yw-shadow,
+    $sbitem-bg-gr,
+    $sbitem-bg-gr-shadow,
+    $sbitem-bg-bl,
+    $sbitem-bg-bl-shadow,
+    $sbitem-bg-vt,
+    $sbitem-bg-vt-shadow
+) {
+    #document-sidebar {
+        font-family: "Nunito Sans", sans-serif;
+        > div {
+            > div.p-2 {
+                .text-sm {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                }
+                .ml-auto {
+                    > .bg-gray-10 {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: $sbitem-text-contrast;
+                        background-color: $sbitem-bg-yw;
+                        [data-icon~="fire-streak"] {
+                            color: #FF4A44;
+                        }
+                        [data-icon~="star-filled"] {
+                            color: #69C79C;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    [data-type~="document_list_item"] {
+        .bold {
+            font-weight: 550;
+        }
+        span.inline-block {
+            > div.inline-block {
+                margin-top: 0.125rem; // rem thumbnail position
+            }
+        }
+        .rounded-md {
+            font-size: 1rem;
+            .RichTextViewer {
+                > span {
+                    &.highlight-color--red,
+                    &.highlight-color--orange,
+                    &.highlight-color--yellow,
+                    &.highlight-color--green,
+                    &.highlight-color--blue,
+                    &.highlight-color--purple {
+                        font-weight: 550;
+                    }
+                }
+            }
+            &.highlight-color--red,
+            &.highlight-color--orange,
+            &.highlight-color--yellow,
+            &.highlight-color--green,
+            &.highlight-color--blue,
+            &.highlight-color--purple {
+                background-color: unset;
+                > div {
+                    gap: unset;
+                    > div {
+                        padding: 0.25rem;
+                        border-radius: 4px;
+                    }
+                }
+            }
+            &.highlight-color--red {
+                > div {
+                    > div.grow {
+                        background-color: $sbitem-bg-rd;
+                        box-shadow: $sbitem-bg-rd-shadow;
+                    }
+                }
+            }
+            &.highlight-color--orange {
+                > div {
+                    > div.grow {
+                        background-color: $sbitem-bg-or;
+                        box-shadow: $sbitem-bg-or-shadow;
+                    }
+                }
+            }
+            &.highlight-color--yellow {
+                > div {
+                    > div.grow {
+                        background-color: $sbitem-bg-yw;
+                        box-shadow: $sbitem-bg-yw-shadow;
+                    }
+                }
+            }
+            &.highlight-color--green {
+                > div {
+                    > div.grow {
+                        background-color: $sbitem-bg-gr;
+                        box-shadow: $sbitem-bg-gr-shadow;
+                    }
+                }
+            }
+            &.highlight-color--blue {
+                > div {
+                    > div.grow {
+                        background-color: $sbitem-bg-bl;
+                        box-shadow: $sbitem-bg-bl-shadow;
+                    }
+                }
+            }
+            &.highlight-color--purple {
+                > div {
+                    > div.grow {
+                        background-color: $sbitem-bg-vt;
+                        box-shadow: $sbitem-bg-vt-shadow;
+                    }
+                }
+            }
+            > div {
+                padding-top: 0.4rem;
+                padding-bottom: 0.4rem;
+                
+                > div.grow {
+                    > .truncate {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+                > div.grow.flex-1.overflow-hidden:not(.document-list-item__folder-icon + div.grow.flex-1.overflow-hidden) {
+                    margin-left: 24px;
+                }
+            }
+        }
+    }
+}
+
+@include SidebarEnhancer(
+    var(--sbitem-text-contrast),
+    var(--sbitem-bg-rd),
+    var(--sbitem-bg-rd-shadow),
+    var(--sbitem-bg-or),
+    var(--sbitem-bg-or-shadow),
+    var(--sbitem-bg-yw),
+    var(--sbitem-bg-yw-shadow),
+    var(--sbitem-bg-gr),
+    var(--sbitem-bg-gr-shadow),
+    var(--sbitem-bg-bl),
+    var(--sbitem-bg-bl-shadow),
+    var(--sbitem-bg-vt),
+    var(--sbitem-bg-vt-shadow)
+);
+.dark {
+    @include SidebarEnhancer(
+        var(--sbitem-text-contrast-dark),
+        var(--sbitem-bg-rd-dark),
+        var(--sbitem-bg-rd-shadow-dark),
+        var(--sbitem-bg-or-dark),
+        var(--sbitem-bg-or-shadow-dark),
+        var(--sbitem-bg-yw-dark),
+        var(--sbitem-bg-yw-shadow-dark),
+        var(--sbitem-bg-gr-dark),
+        var(--sbitem-bg-gr-shadow-dark),
+        var(--sbitem-bg-bl-dark),
+        var(--sbitem-bg-bl-shadow-dark),
+        var(--sbitem-bg-vt-dark),
+        var(--sbitem-bg-vt-shadow-dark)
+    );
+}

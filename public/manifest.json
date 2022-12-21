@@ -1,13 +1,13 @@
 {
   "manifestVersion": 1,
-  "id": "snippet_template",
-  "name": "Snippet Template",
-  "author": "remnote",
-  "repoUrl": "https://www.google.com",
+  "id": "browneyedsoul-SidebarEnhancer",
+  "name": "Sidebar Enhancer",
+  "author": "Min-Ki Park",
+  "repoUrl": "https://github.com/browneyedsoul/RemNote-Sidebar-Enhancer",
   "version": {
     "major": 0,
-    "minor": 0,
-    "patch": 1
+    "minor": 1,
+    "patch": 0
   },
   "theme": [],
   "enableOnMobile": false,
