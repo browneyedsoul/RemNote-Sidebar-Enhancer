@@ -27,6 +27,10 @@
     --sbitem-bg-vt-dark: #4A2B44;
     --sbitem-bg-vt-shadow: 1px 1px 2px #8E5B84;
     --sbitem-bg-vt-shadow-dark: 1px 1px 2px #8E5B84;
+    --sbitem-fire: #FF4A44;
+    --sbitem-fire-dark: #FF5851;
+    --sbitem-star: #69C79C;
+    --sbitem-star-dark: #89FAC6;
 }
 
 @mixin SidebarEnhancer(
@@ -42,28 +46,32 @@
     $sbitem-bg-bl,
     $sbitem-bg-bl-shadow,
     $sbitem-bg-vt,
-    $sbitem-bg-vt-shadow
+    $sbitem-bg-vt-shadow,
+    $sbitem-fire,
+    $sbitem-star,
 ) {
     #document-sidebar {
         font-family: "Nunito Sans", sans-serif;
-        > div {
-            > div.p-2 {
+        > div.p-2 {
+            [data-cy~="document-sidebar-top-link"] {
                 .text-sm {
                     font-size: 1.1rem;
                     font-weight: 600;
                 }
+            }
+            > a:last-of-type {
                 .ml-auto {
-                    > .bg-gray-10 {
-                        font-size: 1rem;
+                    > div {
+                        font-size: 1.1rem;
                         font-weight: 600;
                         color: $sbitem-text-contrast;
                         background-color: $sbitem-bg-yw;
-                        [data-icon~="fire-streak"] {
-                            color: #FF4A44;
-                        }
-                        [data-icon~="star-filled"] {
-                            color: #69C79C;
-                        }
+                    }
+                    div:has([data-icon~="fire-streak"]) {
+                        color: $sbitem-fire;
+                    }
+                    div:has([data-icon~="star-filled"]) {
+                        color: $sbitem-star;
                     }
                 }
             }
@@ -186,7 +194,9 @@
     var(--sbitem-bg-bl),
     var(--sbitem-bg-bl-shadow),
     var(--sbitem-bg-vt),
-    var(--sbitem-bg-vt-shadow)
+    var(--sbitem-bg-vt-shadow),
+    var(--sbitem-fire),
+    var(--sbitem-star),
 );
 .dark {
     @include SidebarEnhancer(
@@ -202,6 +212,8 @@
         var(--sbitem-bg-bl-dark),
         var(--sbitem-bg-bl-shadow-dark),
         var(--sbitem-bg-vt-dark),
-        var(--sbitem-bg-vt-shadow-dark)
+        var(--sbitem-bg-vt-shadow-dark),
+        var(--sbitem-fire-dark),
+    var(--sbitem-star-dark),
     );
 }
