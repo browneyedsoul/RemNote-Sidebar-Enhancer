@@ -52,26 +52,28 @@
 ) {
     #document-sidebar {
         font-family: "Nunito Sans", sans-serif;
-        > div.p-2 {
-            [data-cy~="document-sidebar-top-link"] {
-                .text-sm {
-                    font-size: 1.1rem;
-                    font-weight: 600;
-                }
-            }
-            > a:last-of-type {
-                .ml-auto {
-                    > div {
+        > div {
+            > div.p-2 {
+                [data-cy~="document-sidebar-top-link"] {
+                    .text-sm {
                         font-size: 1.1rem;
                         font-weight: 600;
-                        color: $sbitem-text-contrast;
-                        background-color: $sbitem-bg-yw;
                     }
-                    div:has([data-icon~="fire-streak"]) {
-                        color: $sbitem-fire;
-                    }
-                    div:has([data-icon~="star-filled"]) {
-                        color: $sbitem-star;
+                }
+                > a:last-of-type {
+                    .ml-auto {
+                        > div {
+                            font-size: 1.1rem;
+                            font-weight: 600;
+                            color: $sbitem-text-contrast;
+                            background-color: $sbitem-bg-yw;
+                        }
+                        div:has([data-icon~="fire-streak"]) {
+                            color: $sbitem-fire;
+                        }
+                        div:has([data-icon~="star-filled"]) {
+                            color: $sbitem-star;
+                        }
                     }
                 }
             }
