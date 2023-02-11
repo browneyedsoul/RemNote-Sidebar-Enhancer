@@ -4,7 +4,7 @@
     --sbitem-text-contrast: #FF4A44;
     --sbitem-text-contrast-dark: #E8E67D;
     --sbitem-bg-rd: #FFEEEB;
-    --sbitem-bg-rd-dark: #572A25;
+    --sbitem-bg-rd-dark: #63322B;
     --sbitem-bg-rd-shadow: 1px 1px 2px #A95E55;
     --sbitem-bg-rd-shadow-dark: 1px 1px 2px #9E5B53;
     --sbitem-bg-or: #FFF0DD;
@@ -12,7 +12,7 @@
     --sbitem-bg-or-shadow: 1px 1px 2px #816242;
     --sbitem-bg-or-shadow-dark: 1px 1px 2px #816242;
     --sbitem-bg-yw: #FCF9DC;
-    --sbitem-bg-yw-dark: #443E1E;
+    --sbitem-bg-yw-dark: #554700;
     --sbitem-bg-yw-shadow: 1px 1px 2px #8C814F;
     --sbitem-bg-yw-shadow-dark: 1px 1px 2px #8C814F;
     --sbitem-bg-gr: #EBF2EC;
@@ -24,7 +24,7 @@
     --sbitem-bg-bl-shadow: 1px 1px 2px #3A7692;
     --sbitem-bg-bl-shadow-dark: 1px 1px 2px #3A7692;
     --sbitem-bg-vt: #F5E9FF;
-    --sbitem-bg-vt-dark: #4A2B44;
+    --sbitem-bg-vt-dark: #592C50;
     --sbitem-bg-vt-shadow: 1px 1px 2px #8E5B84;
     --sbitem-bg-vt-shadow-dark: 1px 1px 2px #8E5B84;
     --sbitem-fire: #FF4A44;
@@ -32,7 +32,10 @@
     --sbitem-star: #69C79C;
     --sbitem-star-dark: #89FAC6;
 }
-
+%docTitle {
+    padding: 0.5rem;
+    border-radius: 4px;
+}
 @mixin SidebarEnhancer(
     $sbitem-text-contrast,
     $sbitem-bg-rd,
@@ -50,6 +53,41 @@
     $sbitem-fire,
     $sbitem-star,
 ) {
+    .rn-doc-title {
+        > div.text-transparent {
+            display: none;
+        }
+        &:has(.text-transparent.highlight-color--red) {
+            background-color: $sbitem-bg-rd;
+            box-shadow: $sbitem-bg-rd-shadow;
+            @extend %docTitle;
+        }
+        &:has(.text-transparent.highlight-color--orange) {
+            background-color: $sbitem-bg-or;
+            box-shadow: $sbitem-bg-or-shadow;
+            @extend %docTitle;
+        }
+        &:has(.text-transparent.highlight-color--yellow) {
+            background-color: $sbitem-bg-yw;
+            box-shadow: $sbitem-bg-yw-shadow;
+            @extend %docTitle;
+        }
+        &:has(.text-transparent.highlight-color--green) {
+            background-color: $sbitem-bg-gr;
+            box-shadow: $sbitem-bg-gr-shadow;
+            @extend %docTitle;
+        }
+        &:has(.text-transparent.highlight-color--blue) {
+            background-color: $sbitem-bg-bl;
+            box-shadow: $sbitem-bg-bl-shadow;
+            @extend %docTitle;
+        }
+        &:has(.text-transparent.highlight-color--purple) {
+            background-color: $sbitem-bg-vt;
+            box-shadow: $sbitem-bg-vt-shadow;
+            @extend %docTitle;
+        }
+    }
     #document-sidebar {
         font-family: "Nunito Sans", sans-serif;
         > div {
@@ -58,6 +96,11 @@
                     .text-sm {
                         font-size: 1.1rem;
                         font-weight: 600;
+                    }
+                    @media screen and (min-width: 280px) {
+                        .text-sm {
+                            font-size: 1rem;
+                        }
                     }
                 }
                 > a:last-of-type {
