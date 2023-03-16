@@ -109,10 +109,7 @@
             }
             :has([data-icon~="fire-streak"]) {
                 color: $sbitem-fire;
-                font-size: .9rem;
-                @media screen and (max-width: 768px) {
-                    font-size: .8rem;
-                }
+                font-size: .75rem;
             }
             :has([data-icon~="star-filled"]) {
                 color: $sbitem-star;
