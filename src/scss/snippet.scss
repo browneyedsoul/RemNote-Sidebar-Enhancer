@@ -96,6 +96,14 @@
     }
     #document-sidebar {
         font-family: "Nunito Sans", sans-serif;
+        .rn-document-sidebar__top-link {
+            .text-sm {
+                font-size: 1.1rem;
+                @media screen and (max-width: 768px) {
+                    font-size: 1rem;
+                }
+            }
+        }
         [data-label~="Flashcards"] {
             .rn-sidebar-counter {
                 font-size: 1rem;
