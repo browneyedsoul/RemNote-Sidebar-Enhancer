@@ -96,6 +96,26 @@
     }
     #document-sidebar {
         font-family: "Nunito Sans", sans-serif;
+        .rn-document-sidebar__top-link {
+            .text-sm {
+                font-size: 1.1rem;
+                @media screen and (max-width: 768px) {
+                    font-size: 1rem;
+                }
+            }
+            &[data-label*="Help"] {
+                height: 1.2rem;
+                .text-sm {
+                    font-size: .9rem;
+                }
+            }
+            &[data-label~="Import"] {
+                height: 1.2rem;
+                .text-sm {
+                    font-size: .9rem;
+                }
+            }
+        }
         [data-label~="Flashcards"] {
             .rn-sidebar-counter {
                 font-size: 1rem;
@@ -113,7 +133,7 @@
             }
             :has([data-icon~="star-filled"]) {
                 color: $sbitem-star;
-                font-size: .9rem;
+                font-size: .95rem;
                 @media screen and (max-width: 768px) {
                     font-size: .8rem;
                 }
@@ -129,10 +149,13 @@
                 margin-top: 0.125rem; // rem thumbnail position
             }
         }
+        .icon-button {
+            left: -.5rem;
+        }
         .rounded-md {
-            font-size: 1rem;
+            font-size: .9rem;
             @media screen and (max-width: 768px) {
-                font-size: .9rem;
+                font-size: .85rem;
             }
             .RichTextViewer {
                 > span {
@@ -220,7 +243,7 @@
                     }
                 }
                 > div.grow.flex-1.overflow-hidden:not(.document-list-item__folder-icon + div.grow.flex-1.overflow-hidden) {
-                    margin-left: 24px;
+                    margin-left: 15px;
                 }
             }
         }
