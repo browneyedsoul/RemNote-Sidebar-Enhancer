@@ -157,6 +157,9 @@
             @media screen and (max-width: 768px) {
                 font-size: .85rem;
             }
+            .gap-2 {
+                gap: unset;
+            }
             .RichTextViewer {
                 > span {
                     &.highlight-color--red,
