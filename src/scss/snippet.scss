@@ -120,7 +120,7 @@
             .rn-sidebar-counter {
                 font-size: 1rem;
                 border-radius: 4px;
-                box-shadow: .025rem .025rem .05rem $sbitem-btn-sdw;
+                box-shadow: .05rem .05rem .075rem $sbitem-btn-sdw;
                 color: $sbitem-text-contrast;
                 background-color: $sbitem-btn-bg;
                 @media screen and (max-width: 768px) {
@@ -153,10 +153,6 @@
             left: -.5rem;
         }
         .rounded-md {
-            font-size: .9rem;
-            @media screen and (max-width: 768px) {
-                font-size: .85rem;
-            }
             .gap-2 {
                 gap: unset;
             }

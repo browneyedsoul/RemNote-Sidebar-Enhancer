@@ -16,6 +16,22 @@ async function onActivate(plugin: ReactRNPlugin) {
     console.log("Sidebar Enhancer Installed from cdn");
     await plugin.app.registerCSS("callout", SidebarCSS);
   }
+
+  await plugin.settings.registerStringSetting({
+    id: "fontsize",
+    title: "Sidebar Item Font Size",
+    description: "You can customize font size of the items (ex. 0.8, 0.95, 1.25 ... )",
+    defaultValue: "1",
+  });
+  plugin.track(async (reactivePlugin) => {
+    const sizeCtrl = await reactivePlugin.settings.getSetting<number>("fontsize");
+    await reactivePlugin.app.registerCSS(
+      "fontsize",
+      `
+      [data-type~=document_list_item] .rounded-md {font-size: ${sizeCtrl}rem;}
+      `
+    );
+  });
 }
 
 async function onDeactivate(_: ReactRNPlugin) {}
