@@ -85,9 +85,10 @@ const config = {
     }),
     new CopyPlugin({
       patterns: [
-        {from: 'public', to: ''},
-        {from: 'README.md', to: ''},
-        {from: 'src/snippet.css', to: ''}
+        { from: 'public', to: '' },
+        { from: 'README.md', to: '' },
+        { from: 'src/snippet.css', to: '' },
+        { from: "src/App.css", to: "" },
       ]
     }),
     fastRefresh,
