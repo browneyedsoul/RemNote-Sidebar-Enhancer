@@ -40,6 +40,23 @@
     padding: 0.5rem;
     border-radius: 4px;
 }
+@mixin positionSwitcher($left) {
+    > [data-type~="document_list_item"] {
+        > div {
+            > div {
+                > span.block {
+                    > div.rounded-md {
+                        > div:not(:has(div.document-list-item__folder-icon)) {
+                            > div {
+                                margin-left: $left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @mixin SidebarEnhancer(
     $sbitem-text-contrast,
     $sbitem-bg-rd,
@@ -149,9 +166,6 @@
                 margin-top: 0.125rem; // rem thumbnail position
             }
         }
-        .icon-button {
-            left: -.5rem;
-        }
         .rounded-md {
             .gap-2 {
                 gap: unset;
@@ -241,10 +255,20 @@
                         align-items: center;
                     }
                 }
-                > div.grow.flex-1.overflow-hidden:not(.document-list-item__folder-icon + div.grow.flex-1.overflow-hidden) {
-                    margin-left: 15px;
-                }
             }
+        }
+    }
+}
+
+@for $i from 0 through 10 {
+    div[style="height: 36px;"] > div[style="padding-left: #{$i * 20px};"] {
+        @include positionSwitcher(1.5rem)
+    }
+}
+div.rounded-md {
+    > div:not(:has(div.document-list-item__folder-icon)) {
+        > div {
+            margin-left: 0.25rem;
         }
     }
 }
