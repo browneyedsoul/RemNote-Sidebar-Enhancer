@@ -8,13 +8,13 @@ async function onActivate(plugin: ReactRNPlugin) {
     const text = await response.text();
     SidebarCSS = text;
     console.log("Sidebar Enhancer Installed from local");
-    await plugin.app.registerCSS("callout", SidebarCSS);
+    await plugin.app.registerCSS("SidebarCSS", SidebarCSS);
   } catch (error) {
-    const response = await fetch("https://raw.githubusercontent.com/browneyedsoul/RemNote-Sidebar-Enhancer/main/src/snippet.css");
+    const response = await fetch("https://cdn.jsdelivr.net/gh/browneyedsoul/RemNote-Sidebar-Enhancer@main/src/snippet.css");
     const text = await response.text();
     SidebarCSS = text;
     console.log("Sidebar Enhancer Installed from cdn");
-    await plugin.app.registerCSS("callout", SidebarCSS);
+    await plugin.app.registerCSS("SidebarCSS", SidebarCSS);
   }
 
   await plugin.settings.registerStringSetting({
