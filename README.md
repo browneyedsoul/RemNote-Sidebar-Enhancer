@@ -1,6 +1,11 @@
 # Sidebar Enhancer
 
-## Display
+## Benefit
 
-![display](https://raw.githubusercontent.com/browneyedsoul/RemNote-Sidebar-Enhancer/main/public/readme.png)
+- Enhances the appearance of the sidebar (subjective)
+- Removes clutter and unnecessary elements (subjective)
+- Focuses on core functionality
 
+## Roadmap
+- Implement denser sidebar items (lower than 33px)
+- Introduce customizable options
